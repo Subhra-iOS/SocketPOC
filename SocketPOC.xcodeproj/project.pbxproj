@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5886F3223B773C00165FB5 /* String+SocketUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5886F2223B773C00165FB5 /* String+SocketUtility.swift */; };
+		2A5886F5223B779800165FB5 /* SocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5886F4223B779800165FB5 /* SocketHandler.swift */; };
+		2A5886F8223B784E00165FB5 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5886F7223B784E00165FB5 /* MessageModel.swift */; };
 		2ACF35EC223A6A0100597C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF35EB223A6A0100597C45 /* AppDelegate.swift */; };
 		2ACF35EE223A6A0100597C45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF35ED223A6A0100597C45 /* ViewController.swift */; };
 		2ACF35F1223A6A0100597C45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACF35EF223A6A0100597C45 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A5886F2223B773C00165FB5 /* String+SocketUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SocketUtility.swift"; sourceTree = "<group>"; };
+		2A5886F4223B779800165FB5 /* SocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHandler.swift; sourceTree = "<group>"; };
+		2A5886F7223B784E00165FB5 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		2ACF35E8223A6A0100597C45 /* SocketPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACF35EB223A6A0100597C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ACF35ED223A6A0100597C45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A5886EF223B76D600165FB5 /* SocketModule */ = {
+			isa = PBXGroup;
+			children = (
+				2A5886F6223B783800165FB5 /* MessageModel */,
+				2A5886F1223B76FD00165FB5 /* SocketConnectionModule */,
+				2A5886F0223B76EC00165FB5 /* Extension */,
+			);
+			path = SocketModule;
+			sourceTree = "<group>";
+		};
+		2A5886F0223B76EC00165FB5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A5886F2223B773C00165FB5 /* String+SocketUtility.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2A5886F1223B76FD00165FB5 /* SocketConnectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				2A5886F4223B779800165FB5 /* SocketHandler.swift */,
+			);
+			path = SocketConnectionModule;
+			sourceTree = "<group>";
+		};
+		2A5886F6223B783800165FB5 /* MessageModel */ = {
+			isa = PBXGroup;
+			children = (
+				2A5886F7223B784E00165FB5 /* MessageModel.swift */,
+			);
+			path = MessageModel;
+			sourceTree = "<group>";
+		};
 		2ACF35DF223A6A0100597C45 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +137,7 @@
 		2ACF35EA223A6A0100597C45 /* SocketPOC */ = {
 			isa = PBXGroup;
 			children = (
+				2A5886EF223B76D600165FB5 /* SocketModule */,
 				2ACF35EB223A6A0100597C45 /* AppDelegate.swift */,
 				2ACF35ED223A6A0100597C45 /* ViewController.swift */,
 				2ACF35EF223A6A0100597C45 /* Main.storyboard */,
@@ -256,8 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5886F8223B784E00165FB5 /* MessageModel.swift in Sources */,
 				2ACF35EE223A6A0100597C45 /* ViewController.swift in Sources */,
+				2A5886F5223B779800165FB5 /* SocketHandler.swift in Sources */,
 				2ACF35EC223A6A0100597C45 /* AppDelegate.swift in Sources */,
+				2A5886F3223B773C00165FB5 /* String+SocketUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
