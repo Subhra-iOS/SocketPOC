@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   type = "1"
+   type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.8123159"
+            filePath = "SocketPOC/ViewController.swift"
+            timestampString = "574596750.893834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "stopSocketSession()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "connectSocket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.812386"
+            filePath = "SocketPOC/ViewController.swift"
+            timestampString = "574596750.894353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "stream(_:handle:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "connectSocket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.812446"
+            filePath = "SocketPOC/ViewController.swift"
+            timestampString = "574596750.8946739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "processedMessageString(buffer:length:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "connectSocket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.812505"
+            filePath = "Pods/Socket.IO-Client-Swift/Source/SocketIO/Ack/SocketAckEmitter.swift"
+            timestampString = "574596750.894979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "sendMessage(message:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "init(ackNumber:items:socket:binary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,29 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.812562"
+            filePath = "SocketPOC/ViewController.swift"
+            timestampString = "574596750.8950371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "addUserToken(token:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocketPOC/SocketModule/SocketConnectionModule/SocketHandler.swift"
-            timestampString = "574593299.812619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "setupNetworkCommunication()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "connectSocket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

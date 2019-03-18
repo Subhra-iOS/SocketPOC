@@ -1,0 +1,6 @@
+framework module Pods_SocketPOC {
+  umbrella header "Pods-SocketPOC-umbrella.h"
+
+  export *
+  module * { export * }
+}
