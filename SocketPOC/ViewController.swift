@@ -79,44 +79,33 @@ extension ViewController{
     
 }
 
-/*extension ViewController : SocketManagerSpec{
-    
-    func socket(forNamespace nsp: String) -> SocketIOClient {
-        
-    }
-    
-    func engineDidError(reason: String) {
-        
-    }
-    
-    func engineDidClose(reason: String) {
-        
-    }
-    
-    func engineDidOpen(reason: String) {
-        
-    }
-    
-    func engineDidReceivePong() {
-        
-    }
-    
-    func engineDidSendPing() {
-        
-    }
-    
-    func parseEngineMessage(_ msg: String) {
-        
-    }
-    
-    func parseEngineBinaryData(_ data: Data) {
-        
-    }
-    
-    func engineDidWebsocketUpgrade(headers: [String : String]) {
-        
-    }
-    
-    
-    
-}*/
+/*
+ class soket {
+ var lat = ""
+ var lng = ""
+ let appDelegate = UIApplication.shared.delegate as!AppDelegate
+ init(lat: String, lng: String) {
+ self.lat = lat
+ self.lng = lng
+ }
+ func connect()  {
+ print("llamada al socket")
+ print(contantes.init().addres)
+ let socket = SocketIOClient(socketURL: URL(string: contantes.init().addres)!,config: [.connectParams(["accessToken" : appDelegate.token]),.forcePolling(true),.nsp("/vendedor"), .log(true)])
+ let myJSON = [
+ "lng":lng,
+ "lat":lat,
+ "idvendedor":appDelegate.idSeller
+ ]
+ socket.on("connect") {data, ack in
+ print("socket connected")
+ socket.emit("setLocation",myJSON)
+ print("Mostrando el Json: \(myJSON)")
+ }
+ socket.on("locationChanged", callback: {_,_ in
+ print("disconnected")
+ socket.disconnect()
+ })
+ socket.connect()
+ }
+ }*/
