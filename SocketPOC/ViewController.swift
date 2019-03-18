@@ -62,50 +62,61 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        let manager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .compress])
-         self.socket = manager.defaultSocket
+        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken])])
+        self.socket = socketManager.defaultSocket
+        self.setSocketEvent()
+       self.socket.connect()
         
-//        self.socket.on(clientEvent: .connect) {data, ack in
-//
-//            print("socket connected \(data)")
-//
-//        }
-//
-//        self.socket.on("What's the order status of  2827333") { (data, ack) in
-//
-//            print("socket connected \(data)")
-//
-//        }
+    }
+    
+    private func setSocketEvent() -> Void{
         
-//        self.socket.on("currentAmount") {data, ack in
-//            guard let cur = data[0] as? Double else { return }
-//
-//            self.socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
-//                self.socket.emit("update", ["amount": cur + 2.50])
-//            }
-//
-//            ack.with("Got your currentAmount", "dude")
-//        }
-        
-        self.socket.joinNamespace() // Create a socket for the /swift namespac
-        self.socket.on(clientEvent: .connect) {data, ack in
-            print("socket connected \(data)")
-            
-            //self.socket.emit("What's the order status of  2827333", with: [ "x-access-token" : userToken])
-            let callBack : OnAckCallback =  self.socket.emitWithAck("What's the order status of  2827333", with: [userToken])
-            
-            print("\(callBack)")
-            
+        self.socket.on(clientEvent: .connect) { (data, ack) in
+            print("Socket Connect")
         }
         
-        socket.on("client balance change") { dataArray, ack in
-            print("socket connected \(dataArray)")
-        }
+    }
+    
+}
+
+/*extension ViewController : SocketManagerSpec{
+    
+    func socket(forNamespace nsp: String) -> SocketIOClient {
         
+    }
+    
+    func engineDidError(reason: String) {
         
-        self.socket.connect()
+    }
+    
+    func engineDidClose(reason: String) {
+        
+    }
+    
+    func engineDidOpen(reason: String) {
+        
+    }
+    
+    func engineDidReceivePong() {
+        
+    }
+    
+    func engineDidSendPing() {
+        
+    }
+    
+    func parseEngineMessage(_ msg: String) {
+        
+    }
+    
+    func parseEngineBinaryData(_ data: Data) {
+        
+    }
+    
+    func engineDidWebsocketUpgrade(headers: [String : String]) {
         
     }
     
     
-}
+    
+}*/
