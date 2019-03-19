@@ -71,10 +71,6 @@ extension ViewController{
     
     private func setSocketEvent() -> Void{
         
-        self.socket.on(clientEvent: .connect) { (data, ack) in
-            print("Socket Connect")
-        }
-        
         let socketJSON = [
             "lng": "",
             "lat": "",
