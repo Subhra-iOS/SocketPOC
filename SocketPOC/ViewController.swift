@@ -62,7 +62,7 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken])])
+        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken ]) ]) // [.log(true), .connectParams(["x-access-token" : userToken])]
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
        self.socket.connect()
@@ -75,6 +75,21 @@ extension ViewController{
             print("Socket Connect")
         }
         
+        let socketJSON = [
+            "lng": "",
+            "lat": "",
+            "id": "What's the order status of  2827333"
+        ]
+        self.socket.on("connect") {data, ack in
+            print("socket connected")
+            self.socket.emit("setLocation",socketJSON)
+            print("Mostrando el Json: \(socketJSON)")
+        }
+        self.socket.on("locationChanged", callback: {_,_ in
+            print("disconnected")
+            self.socket.disconnect()
+        })
+     
     }
     
 }
