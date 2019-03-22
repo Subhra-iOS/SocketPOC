@@ -39,7 +39,7 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken ]) ]) 
+        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken ]) ])
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
        self.socket.connect()
@@ -49,8 +49,8 @@ extension ViewController{
     private func setSocketEvent() -> Void{
         
         let socketJSON = [
-            "lng": "",
-            "lat": "",
+            "lng": "88.426400",
+            "lat": "22.579090",
             "id": "What's the order status of  2827333"
         ]
         self.socket.on("connect") {data, ack in
