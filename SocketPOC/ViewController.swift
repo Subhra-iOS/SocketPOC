@@ -39,7 +39,7 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005/")!, config: [.log(true), .connectParams(["x-access-token" : userToken ]) ])
+        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005")!, config: [.log(true) ])
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
        self.socket.connect()
@@ -48,20 +48,23 @@ extension ViewController{
     
     private func setSocketEvent() -> Void{
         
-        let socketJSON = [
-            "lng": "88.426400",
-            "lat": "22.579090",
-            "id": "What's the order status of  2827333"
+        let socketJSON  : [String : Any] = [
+            "'device_id" : "46857FC7-0FBE-4CBA-8E4E-C8AB0E765279",
+            "type"  : "ios",
+            "bot_token" : "46857FC7-0FBE-4CBA-8E4E-C8AB0E765279",
+            "x-access-token"  : userToken,
+            "message": "show me the order status 2827333",
+            "position" : [ "Longitude": "88.426400",
+                                  "Latitude": "22.579090"]
         ]
-        self.socket.on("connect") {data, ack in
+        
+        print("Json: \(socketJSON)")
+        
+        self.socket.on("connect") { data, ack in
             print("socket connected")
-            self.socket.emit("setLocation",socketJSON)
-            print("Mostrando el Json: \(socketJSON)")
+            self.socket.emit("chat message",socketJSON)
+            
         }
-        self.socket.on("locationChanged", callback: {_,_ in
-            print("disconnected")
-            self.socket.disconnect()
-        })
      
     }
     
