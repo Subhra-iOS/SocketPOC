@@ -3,7 +3,7 @@
 //  SocketPOC
 //
 //  Created by Subhra Roy on 14/03/19.
-//  Copyright © 2019 ARC. All rights reserved.
+//  Copyright © 2019 Subhra Roy. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,7 @@ private let userToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7IlVzZX
 class ViewController: UIViewController {
 
     private var socket : SocketIOClient!
+    private var  socketManager : SocketManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,9 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        let socketManager = SocketManager(socketURL: URL(string: "http://westcoast1.arctechh.com:3005")!, config: [.log(true) ])
+        self.socketManager = SocketManager(socketURL: URL(string: "ws://westcoast1.arctechh.com:3005")!, config: [.log(true) ])
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
-       self.socket.connect()
         
     }
     
@@ -59,11 +59,10 @@ extension ViewController{
         ]
         
         print("Json: \(socketJSON)")
-        
-        self.socket.on("connect") { data, ack in
+        self.socket.connect()
+        self.socket.on(clientEvent: .connect) { (data, ack) in
             print("socket connected")
             self.socket.emit("chat message",socketJSON)
-            
         }
      
     }

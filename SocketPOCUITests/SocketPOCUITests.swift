@@ -3,7 +3,7 @@
 //  SocketPOCUITests
 //
 //  Created by Subhra Roy on 14/03/19.
-//  Copyright © 2019 ARC. All rights reserved.
+//  Copyright © 2019 Subhra Roy. All rights reserved.
 //
 
 import XCTest
