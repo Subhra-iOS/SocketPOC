@@ -43,7 +43,7 @@ extension ViewController{
         self.socketManager = SocketManager(socketURL: URL(string: "ws://westcoast1.arctechh.com:3005")!, config: [.log(true) ])
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
-        
+        self.socket.connect()
     }
     
     private func setSocketEvent() -> Void{
@@ -59,7 +59,7 @@ extension ViewController{
         ]
         
         print("Json: \(socketJSON)")
-        self.socket.connect()
+        
         self.socket.on(clientEvent: .connect) { (data, ack) in
             print("socket connected")
             self.socket.emit("chat message",socketJSON)
