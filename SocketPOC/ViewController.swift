@@ -69,6 +69,12 @@ extension ViewController{
                 if let result : [[String : Any]] = data as?  [[String : Any]]{
                     print("\(result)")
                     
+                    let extraDict : [String : Any] = result[0]["extra"] as! [String : Any]
+                    let action : String = extraDict["action"] as! String
+                    
+                    print("\(String(describing: action))")
+                    print("\(String(describing: result[0]["result"]))")
+                    
                 }
                 
             })
