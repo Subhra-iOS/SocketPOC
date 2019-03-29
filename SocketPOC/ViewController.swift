@@ -63,6 +63,17 @@ extension ViewController{
         self.socket.on(clientEvent: .connect) { (data, ack) in
             print("socket connected")
             self.socket.emit("chat message",socketJSON)
+            
+            self.socket.on("chat message", callback: { (data, _) in
+                
+                if let result : [[String : Any]] = data as?  [[String : Any]]{
+                    print("\(result)")
+                    
+                }
+                
+            })
+            
+            
         }
      
     }
