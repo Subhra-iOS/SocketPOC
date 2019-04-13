@@ -60,28 +60,36 @@ extension ViewController{
         
         print("Json: \(socketJSON)")
         
-        self.socket.on(clientEvent: .connect) { (data, ack) in
-            print("socket connected")
-            self.socket.emit("chat message",socketJSON)
-            
-            self.socket.on("chat message", callback: { (data, _) in
-                
-                if let result : [[String : Any]] = data as?  [[String : Any]]{
-                    print("\(result)")
-                    
-                    let extraDict : [String : Any] = result[0]["extra"] as! [String : Any]
-                    let action : String = extraDict["action"] as! String
-                    
-                    print("\(String(describing: action))")
-                    print("\(String(describing: result[0]["result"]))")
-                    
-                }
-                
-            })
-            
-            
+        let socketStatus  : SocketIOStatus = self.socket.status
+        
+        switch socketStatus {
+            case .connected:
+                print("socket  connected")
+                self.sendMessageOverSocketWith(socketJSON)
+            case .disconnected, .notConnected :
+                self.socket.on(clientEvent: .connect) { (data, ack) in
+                    print("socket not connected")
+                    self.sendMessageOverSocketWith(socketJSON)
+               }
+            case .connecting : break
         }
-     
+    }
+    
+    private func sendMessageOverSocketWith( _ json : [String : Any]) -> Void{
+        self.socket.emit("chat message",json)
+        self.socket.on("chat message", callback: { (data, _) in
+            
+            if let result : [[String : Any]] = data as?  [[String : Any]]{
+                print("\(result)")
+                
+                let extraDict : [String : Any] = result[0]["extra"] as! [String : Any]
+                let action : String = extraDict["action"] as! String
+                
+                print("\(String(describing: action))")
+                print("\(String(describing: result[0]["result"]))")
+                
+            }
+        })
     }
     
 }
