@@ -33,3 +33,5 @@ xcuserdata/
 
 
 SocketPOC.xcworkspace/xcuserdata/subhraroy.xcuserdatad/UserInterfaceState.xcuserstate
+*.plist
+SocketPOC.xcodeproj/xcuserdata/subhraroy.xcuserdatad/xcschemes/xcschememanagement.plist
