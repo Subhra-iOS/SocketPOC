@@ -35,3 +35,7 @@ xcuserdata/
 SocketPOC.xcworkspace/xcuserdata/subhraroy.xcuserdatad/UserInterfaceState.xcuserstate
 *.plist
 SocketPOC.xcodeproj/xcuserdata/subhraroy.xcuserdatad/xcschemes/xcschememanagement.plist
+.DS_Store
+Pods/Pods.xcodeproj/xcuserdata/subhraroy.xcuserdatad/xcschemes/xcschememanagement.plist
+SocketPOC.xcodeproj/xcuserdata/subhraroy.xcuserdatad/xcschemes/xcschememanagement.plist
+SocketPOC.xcworkspace/xcuserdata/subhraroy.xcuserdatad/UserInterfaceState.xcuserstate
