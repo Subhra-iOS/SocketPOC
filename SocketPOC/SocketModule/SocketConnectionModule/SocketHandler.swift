@@ -29,7 +29,7 @@ class SocketHandler : NSObject {
         var writeStream: Unmanaged<CFWriteStream>?
         
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault,
-                                           "http://westcoast1.arctechh.com:3005/" as CFString,
+                                           "http://wtechh.com:3005/" as CFString,
                                            80,
                                            &readStream,
                                            &writeStream)

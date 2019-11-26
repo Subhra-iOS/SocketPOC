@@ -40,7 +40,7 @@ extension ViewController{
     
     private func connectSocket() -> Void{
         
-        self.socketManager = SocketManager(socketURL: URL(string: "ws://westcoast1.arctechh.com:3005")!, config: [.log(true) ])
+        self.socketManager = SocketManager(socketURL: URL(string: "ws://wtechh.com:3005")!, config: [.log(true) ])
         self.socket = socketManager.defaultSocket
         self.setSocketEvent()
         self.socket.connect()
